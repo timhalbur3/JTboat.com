@@ -100,10 +100,16 @@ body {
 
 .fleet img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
+    border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fleet img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .fleet img:hover {
@@ -222,10 +228,10 @@ body {
     <h2>Boats We Service</h2>
 
     <div class="fleet">
-        <img src="jetboat.jpg&fit=crop&w=800&q=80" alt="Wake boat">
-        <img src="fishingboat.jpg&fit=crop&w=800&q=80" alt="Fishing boat">
-        <img src="pontoon.jpg&fit=crop&w=800&q=80" alt="Pontoon">
-        <img src="jetski.jpg&fit=crop&w=800&q=80" alt="Jet ski">
+        <img src="jetboat.jpg" alt="Wake boat">
+        <img src="fishingboat.jpg" alt="Fishing boat">
+        <img src="pontoon.jpg" alt="Pontoon">
+        <img src="jetski.jpg" alt="Jet ski">
     </div>
 </div>
 
