@@ -23,7 +23,6 @@ body {
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background: rgba(11, 28, 44, 0.85);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -35,7 +34,7 @@ body {
     text-decoration: none;
 }
 
-/* HERO (BRIGHTER / SUNNY LAKE FEEL) */
+/* HERO */
 .hero {
     height: 65vh;
     display: flex;
@@ -91,7 +90,7 @@ body {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* FLEET IMAGES */
+/* FLEET */
 .fleet {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -104,11 +103,44 @@ body {
     height: 200px;
     object-fit: cover;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: transform 0.3s ease;
+    transition: 0.3s;
 }
 
 .fleet img:hover {
     transform: scale(1.03);
+}
+
+/* BEFORE AFTER SLIDER */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.slider-container img {
+    width: 100%;
+    display: block;
+}
+
+.slider-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
 }
 
 /* REVIEWS */
@@ -118,6 +150,14 @@ body {
     margin: 10px;
     border-left: 3px solid #fff;
     text-align: left;
+}
+
+/* FOOTER */
+.footer {
+    padding: 30px;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 /* STICKY CALL */
@@ -133,14 +173,6 @@ body {
     font-weight: bold;
     z-index: 2000;
 }
-
-/* FOOTER */
-.footer {
-    padding: 30px;
-    text-align: center;
-    color: #888;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
 </style>
 </head>
 
@@ -152,8 +184,7 @@ body {
     <div>
         <a href="#services">Services</a>
         <a href="#fleet">Fleet</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a href="#beforeafter">Results</a>
     </div>
 </div>
 
@@ -171,55 +202,61 @@ body {
     <div class="grid">
         <div class="card">
             <h3>Interior Cleaning</h3>
-            <p>Deep cleaning of seats, floors, and storage areas.</p>
+            <p>Deep cleaning of seats, floors, and cabins.</p>
         </div>
 
         <div class="card">
             <h3>Dockside Service</h3>
-            <p>We clean your boat directly at your lift or dock.</p>
+            <p>We clean your boat directly at your dock or lift.</p>
         </div>
 
         <div class="card">
             <h3>On-Lift Refueling</h3>
-            <p>Fuel delivered directly to your boat—no hassle.</p>
+            <p>Fuel delivered directly to your boat.</p>
         </div>
     </div>
 </div>
 
-<!-- FLEET SECTION (NEW) -->
+<!-- FLEET -->
 <div class="section" id="fleet">
     <h2>Boats We Service</h2>
-    <p>We specialize in high-end lakecraft across all types of recreational boats.</p>
 
     <div class="fleet">
         <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=800&q=80" alt="Wake boat">
         <img src="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?auto=format&fit=crop&w=800&q=80" alt="Fishing boat">
-        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Pontoon boat">
+        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80" alt="Pontoon">
         <img src="https://images.unsplash.com/photo-1534375971785-5c1826f739d8?auto=format&fit=crop&w=800&q=80" alt="Jet ski">
     </div>
 </div>
 
-<!-- REVIEWS -->
-<div class="section" id="reviews">
-    <h2>Customer Reviews</h2>
+<!-- BEFORE / AFTER -->
+<div class="section" id="beforeafter">
+    <h2>Real Results</h2>
+    <p>Drag to see the transformation</p>
 
-    <div class="review">
-        ⭐⭐⭐⭐⭐ “Boat looked brand new after service. Super convenient dockside cleaning.” – Local Owner
-    </div>
+    <div class="slider-container" id="slider">
+        <img src="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?auto=format&fit=crop&w=1200&q=80">
+        
+        <div class="slider-before" id="before">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80">
+        </div>
 
-    <div class="review">
-        ⭐⭐⭐⭐⭐ “Best lake service I’ve used—fast and reliable.” – Lake Madison Customer
-    </div>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐ “Makes owning a boat so much easier.” – Pontoon Owner
+        <div class="slider-handle" id="handle"></div>
     </div>
 </div>
 
+<!-- REVIEWS -->
+<div class="section">
+    <h2>Customer Reviews</h2>
+
+    <div class="review">⭐⭐⭐⭐⭐ “Boat looked brand new after service.”</div>
+    <div class="review">⭐⭐⭐⭐⭐ “Best dockside service on the lake.”</div>
+    <div class="review">⭐⭐⭐⭐⭐ “Super convenient and professional.”</div>
+</div>
+
 <!-- CONTACT -->
-<div class="section" id="contact">
+<div class="section">
     <h2>Ready When You Are</h2>
-    <p>Call or text to schedule dockside service.</p>
     <a class="btn" href="tel:YOURNUMBER">Call JT Boat Services</a>
 </div>
 
@@ -228,8 +265,27 @@ body {
     JT Boat Services • Madison, South Dakota
 </div>
 
-<!-- STICKY CALL BUTTON -->
+<!-- STICKY BUTTON -->
 <a class="sticky-call" href="tel:YOURNUMBER">📞 Call Now</a>
+
+<!-- SLIDER SCRIPT -->
+<script>
+const slider = document.getElementById("slider");
+const before = document.getElementById("before");
+const handle = document.getElementById("handle");
+
+slider.addEventListener("mousemove", function(e) {
+    let rect = slider.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let percent = (x / rect.width) * 100;
+
+    if (percent < 0) percent = 0;
+    if (percent > 100) percent = 100;
+
+    before.style.width = percent + "%";
+    handle.style.left = percent + "%";
+});
+</script>
 
 </body>
 </html>
