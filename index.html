@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JT Boat Services | Premium Dockside Boat Care</title>
+<title>JT Boat Services | Premium Dockside Care</title>
 
 <style>
-    html {
-        scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
         margin: 0;
@@ -18,62 +16,75 @@
         overflow-x: hidden;
     }
 
-    /* LOGO */
-    .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.1);
+    /* HEADER */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 30px;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        color: white;
-        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(11, 28, 44, 0.85);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* HERO */
+    .logo {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .nav a {
+        color: #ddd;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .nav a:hover {
+        color: white;
+    }
+
+    /* HERO (smaller now) */
     .hero {
-        height: 95vh;
+        height: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        position: relative;
+        padding-top: 80px;
         background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
         url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
         background-size: cover;
         background-position: center;
-        padding: 20px;
     }
 
     .hero h1 {
-        font-size: 52px;
-        letter-spacing: 2px;
+        font-size: 44px;
         margin: 0;
         opacity: 0;
-        transform: translateY(20px);
         animation: fadeUp 1s ease forwards;
     }
 
     .hero p {
-        font-size: 18px;
-        margin-top: 10px;
+        font-size: 16px;
         color: #d0d0d0;
+        margin-top: 10px;
         opacity: 0;
         animation: fadeUp 1s ease forwards;
         animation-delay: 0.3s;
     }
 
     .btn {
-        margin-top: 25px;
-        padding: 12px 28px;
-        border: 1px solid #ffffff;
-        color: white;
+        margin-top: 20px;
+        padding: 10px 24px;
+        border: 1px solid #fff;
+        color: #fff;
         text-decoration: none;
         transition: 0.3s;
         letter-spacing: 1px;
@@ -83,19 +94,19 @@
     }
 
     .btn:hover {
-        background: white;
+        background: #fff;
         color: #0b1c2c;
     }
 
     /* SECTIONS */
     .section {
-        padding: 90px 20px;
+        padding: 80px 20px;
         max-width: 1000px;
         margin: auto;
         text-align: center;
         opacity: 0;
         transform: translateY(40px);
-        transition: all 0.8s ease;
+        transition: 0.8s ease;
     }
 
     .section.show {
@@ -104,15 +115,11 @@
     }
 
     h2 {
-        font-size: 30px;
+        font-size: 28px;
         margin-bottom: 20px;
-        letter-spacing: 1px;
     }
 
-    p {
-        color: #cfcfcf;
-        line-height: 1.6;
-    }
+    p { color: #cfcfcf; line-height: 1.6; }
 
     /* SERVICES */
     .services {
@@ -126,11 +133,6 @@
         background: #12263a;
         padding: 20px;
         border: 1px solid rgba(255,255,255,0.08);
-        transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
     }
 
     /* GALLERY */
@@ -146,11 +148,6 @@
         height: 200px;
         object-fit: cover;
         border: 1px solid rgba(255,255,255,0.1);
-        transition: transform 0.4s ease;
-    }
-
-    .gallery img:hover {
-        transform: scale(1.03);
     }
 
     /* TEAM */
@@ -167,14 +164,6 @@
         border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .avatar {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.1);
-        margin: 0 auto 10px auto;
-    }
-
     /* FOOTER */
     .footer {
         padding: 40px;
@@ -184,7 +173,6 @@
         border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* ANIMATION */
     @keyframes fadeUp {
         to {
             opacity: 1;
@@ -192,57 +180,51 @@
         }
     }
 </style>
-
 </head>
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">JT BOAT SERVICES</div>
+    <div class="nav">
+        <a href="#services">Services</a>
+        <a href="#gallery">Work</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
-    <div class="logo">LOGO</div>
-
-    <h1>JT Boat Services</h1>
-    <p>Premium Dockside Boat Cleaning & Refueling</p>
-    <a class="btn" href="tel:YOURNUMBER">Call / Text Now</a>
+    <h1>Premium Dockside Boat Care</h1>
+    <p>Luxury interior cleaning & on-lift refueling in Madison, SD</p>
+    <a class="btn" href="tel:YOURNUMBER">Call / Text</a>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
     <h2>About Us</h2>
     <p>
-        JT Boat Services delivers high-end dockside boat care across Madison, South Dakota.
-        We specialize in interior detailing and on-lift refueling, helping boat owners keep
-        their vessels clean, ready, and effortless to enjoy—without ever leaving the dock.
+        JT Boat Services provides high-end dockside boat cleaning and refueling across
+        Lake Madison, Lake Herman, and Lake Brandt. We keep your boat spotless and ready
+        without ever leaving your dock.
     </p>
 </div>
 
 <!-- SERVICES -->
-<div class="section">
+<div class="section" id="services">
     <h2>Services</h2>
-
     <div class="services">
-        <div class="card">
-            <h3>Interior Detailing</h3>
-            <p>Luxury-level cleaning of seating, flooring, and cabin areas.</p>
-        </div>
-
-        <div class="card">
-            <h3>Dockside Service</h3>
-            <p>We service your boat directly at your lift or dock.</p>
-        </div>
-
-        <div class="card">
-            <h3>Refueling</h3>
-            <p>On-lift fueling so your boat is always ready to go.</p>
-        </div>
+        <div class="card">Interior Detailing</div>
+        <div class="card">Dockside Cleaning</div>
+        <div class="card">On-Lift Refueling</div>
     </div>
 </div>
 
 <!-- GALLERY -->
-<div class="section">
+<div class="section" id="gallery">
     <h2>Our Work</h2>
-    <p>Before & after examples of our services</p>
-
     <div class="gallery">
         <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80">
         <img src="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?auto=format&fit=crop&w=800&q=80">
@@ -251,44 +233,31 @@
 </div>
 
 <!-- TEAM -->
-<div class="section">
+<div class="section" id="team">
     <h2>Meet the Team</h2>
-
     <div class="team">
         <div class="member">
-            <div class="avatar"></div>
             <h3>JT Owner</h3>
             <p>Founder & Lead Technician</p>
         </div>
-
         <div class="member">
-            <div class="avatar"></div>
             <h3>Service Crew</h3>
-            <p>Dockside Cleaning Specialists</p>
+            <p>Dockside Specialists</p>
         </div>
     </div>
 </div>
 
-<!-- SERVICE AREA -->
-<div class="section">
-    <h2>Service Area</h2>
-    <p>
-        Lake Madison • Lake Herman • Lake Brandt • Madison, SD
-    </p>
-</div>
-
 <!-- CONTACT -->
-<div class="section">
-    <h2>Get Your Boat Ready Today</h2>
-    <p>Call or text for scheduling and availability.</p>
-    <a class="btn" href="tel:YOURNUMBER">Call JT Boat Services</a>
+<div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Call or text for scheduling</p>
+    <a class="btn" href="tel:YOURNUMBER">Call Now</a>
 </div>
 
 <div class="footer">
     JT Boat Services • Madison, South Dakota
 </div>
 
-<!-- SCROLL ANIMATION SCRIPT -->
 <script>
 const sections = document.querySelectorAll('.section');
 
@@ -298,13 +267,9 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add('show');
         }
     });
-}, {
-    threshold: 0.15
-});
+}, { threshold: 0.15 });
 
-sections.forEach(section => {
-    observer.observe(section);
-});
+sections.forEach(s => observer.observe(s));
 </script>
 
 </body>
