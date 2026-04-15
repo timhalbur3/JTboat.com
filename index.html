@@ -6,22 +6,45 @@
 <title>JT Boat Services | Premium Dockside Boat Care</title>
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         margin: 0;
         font-family: "Helvetica Neue", Arial, sans-serif;
         background: #0b1c2c;
         color: #f5f5f5;
+        overflow-x: hidden;
+    }
+
+    /* LOGO */
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: white;
+        border: 1px solid rgba(255,255,255,0.2);
     }
 
     /* HERO */
     .hero {
-        height: 90vh;
+        height: 95vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        position: relative;
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
         url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
         background-size: cover;
         background-position: center;
@@ -29,15 +52,21 @@
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 52px;
         letter-spacing: 2px;
         margin: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1s ease forwards;
     }
 
     .hero p {
         font-size: 18px;
         margin-top: 10px;
         color: #d0d0d0;
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.3s;
     }
 
     .btn {
@@ -48,6 +77,9 @@
         text-decoration: none;
         transition: 0.3s;
         letter-spacing: 1px;
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.6s;
     }
 
     .btn:hover {
@@ -57,14 +89,22 @@
 
     /* SECTIONS */
     .section {
-        padding: 80px 20px;
-        max-width: 900px;
+        padding: 90px 20px;
+        max-width: 1000px;
         margin: auto;
         text-align: center;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+    }
+
+    .section.show {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     h2 {
-        font-size: 28px;
+        font-size: 30px;
         margin-bottom: 20px;
         letter-spacing: 1px;
     }
@@ -74,7 +114,7 @@
         line-height: 1.6;
     }
 
-    /* SERVICE CARDS */
+    /* SERVICES */
     .services {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -86,6 +126,53 @@
         background: #12263a;
         padding: 20px;
         border: 1px solid rgba(255,255,255,0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* GALLERY */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: transform 0.4s ease;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.03);
+    }
+
+    /* TEAM */
+    .team {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .member {
+        background: #12263a;
+        padding: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        margin: 0 auto 10px auto;
     }
 
     /* FOOTER */
@@ -96,6 +183,14 @@
         color: #888;
         border-top: 1px solid rgba(255,255,255,0.1);
     }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 
 </head>
@@ -104,6 +199,8 @@
 
 <!-- HERO -->
 <div class="hero">
+    <div class="logo">LOGO</div>
+
     <h1>JT Boat Services</h1>
     <p>Premium Dockside Boat Cleaning & Refueling</p>
     <a class="btn" href="tel:YOURNUMBER">Call / Text Now</a>
@@ -111,11 +208,11 @@
 
 <!-- ABOUT -->
 <div class="section">
-    <h2>Luxury-Level Boat Care on the Water</h2>
+    <h2>About Us</h2>
     <p>
-        We provide high-end dockside interior boat cleaning and on-lift refueling services
-        across Madison, South Dakota. No hauling. No hassle. Just clean, ready-to-go boats
-        every time you step on board.
+        JT Boat Services delivers high-end dockside boat care across Madison, South Dakota.
+        We specialize in interior detailing and on-lift refueling, helping boat owners keep
+        their vessels clean, ready, and effortless to enjoy—without ever leaving the dock.
     </p>
 </div>
 
@@ -126,17 +223,48 @@
     <div class="services">
         <div class="card">
             <h3>Interior Detailing</h3>
-            <p>Spotless cabins, seating, flooring, and storage areas.</p>
+            <p>Luxury-level cleaning of seating, flooring, and cabin areas.</p>
         </div>
 
         <div class="card">
             <h3>Dockside Service</h3>
-            <p>We clean your boat directly at your lift or dock.</p>
+            <p>We service your boat directly at your lift or dock.</p>
         </div>
 
         <div class="card">
             <h3>Refueling</h3>
-            <p>Convenient on-lift fueling so you're always ready.</p>
+            <p>On-lift fueling so your boat is always ready to go.</p>
+        </div>
+    </div>
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+    <h2>Our Work</h2>
+    <p>Before & after examples of our services</p>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80">
+    </div>
+</div>
+
+<!-- TEAM -->
+<div class="section">
+    <h2>Meet the Team</h2>
+
+    <div class="team">
+        <div class="member">
+            <div class="avatar"></div>
+            <h3>JT Owner</h3>
+            <p>Founder & Lead Technician</p>
+        </div>
+
+        <div class="member">
+            <div class="avatar"></div>
+            <h3>Service Crew</h3>
+            <p>Dockside Cleaning Specialists</p>
         </div>
     </div>
 </div>
@@ -159,6 +287,25 @@
 <div class="footer">
     JT Boat Services • Madison, South Dakota
 </div>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
 
 </body>
 </html>
