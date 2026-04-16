@@ -112,10 +112,6 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-.fleet img:hover {
-    transform: scale(1.03);
-}
-
 /* BEFORE AFTER SLIDER */
 .slider-container {
     position: relative;
@@ -198,7 +194,7 @@ body {
 <div class="hero">
     <h1>Premium Dockside Boat Care</h1>
     <p>Interior Cleaning • Dockside Service • On-Lift Refueling</p>
-    <a class="btn" href="tel:YOURNUMBER">Call Now</a>
+    <a class="btn" href="tel:6054086623">Call Now</a>
 </div>
 
 <!-- SERVICES -->
@@ -228,7 +224,7 @@ body {
     <h2>Boats We Service</h2>
 
     <div class="fleet">
-        <img src="jetboat.jpg" alt="Wake boat">
+        <img src="wakeboat.jpg" alt="Wake boat">
         <img src="fishingboat.jpg" alt="Fishing boat">
         <img src="pontoon.jpg" alt="Pontoon">
         <img src="jetski.jpg" alt="Jet ski">
@@ -263,7 +259,7 @@ body {
 <!-- CONTACT -->
 <div class="section">
     <h2>Ready When You Are</h2>
-    <a class="btn" href="tel:YOURNUMBER">Call JT Boat Services</a>
+    <a class="btn" href="tel:6054086623">Call JT Boat Services</a>
 </div>
 
 <!-- FOOTER -->
@@ -272,7 +268,7 @@ body {
 </div>
 
 <!-- STICKY BUTTON -->
-<a class="sticky-call" href="tel:YOURNUMBER">📞 Call Now</a>
+<a class="sticky-call" href="tel:6054086623">📞 Call Now</a>
 
 <!-- SLIDER SCRIPT -->
 <script>
@@ -280,17 +276,19 @@ const slider = document.getElementById("slider");
 const before = document.getElementById("before");
 const handle = document.getElementById("handle");
 
-slider.addEventListener("mousemove", function(e) {
+function moveSlider(x) {
     let rect = slider.getBoundingClientRect();
-    let x = e.clientX - rect.left;
-    let percent = (x / rect.width) * 100;
+    let percent = ((x - rect.left) / rect.width) * 100;
 
     if (percent < 0) percent = 0;
     if (percent > 100) percent = 100;
 
     before.style.width = percent + "%";
     handle.style.left = percent + "%";
-});
+}
+
+slider.addEventListener("mousemove", e => moveSlider(e.clientX));
+slider.addEventListener("touchmove", e => moveSlider(e.touches[0].clientX));
 </script>
 
 </body>
