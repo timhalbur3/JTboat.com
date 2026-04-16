@@ -14,7 +14,84 @@ body {
     background: #0b1c2c;
     color: #f5f5f5;
 }
+    
+.logo-img {
+    height: 45px;
+}
 
+/* Animate sun rising */
+.logo-img {
+    animation: floatLogo 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatLogo {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+.logo-animated {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+/* SUN */
+.sun {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: orange;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: riseSun 3s ease forwards;
+}
+
+/* WAVES */
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: #38ada9;
+    border-radius: 50%;
+}
+
+.wave1 {
+    animation: waveMove 3s ease-in-out infinite;
+}
+
+.wave2 {
+    opacity: 0.6;
+    animation: waveMove 3s ease-in-out infinite reverse;
+}
+
+/* ANIMATIONS */
+@keyframes riseSun {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+        bottom: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes waveMove {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+    
 /* HEADER */
 .header {
     position: fixed;
@@ -124,12 +201,6 @@ body {
 }
 
 /* FLEET */
-<div style="margin-bottom:20px;">
-    <p style="letter-spacing:2px; font-size:12px; color:#38ada9; margin:0;">
-        WHAT WE WORK ON
-    </p>
-    <h2 style="margin-top:5px;">Boats We Service</h2>
-</div>
     
 .fleet {
     display: grid;
@@ -233,8 +304,10 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-    <div class="logo">JT BOAT SERVICES</div>
-
+    <div class="logo">
+    <img src="jtlogo.jpg" alt="JT Boat Services Logo" class="logo-img">
+</div>
+    
     <div class="nav">
         <a href="#services">Services</a>
         <a href="#fleet">Fleet</a>
@@ -274,7 +347,12 @@ body {
 
 <!-- FLEET -->
 <div class="section" id="fleet">
-    <h2>Boats We Service</h2>
+    <div style="margin-bottom:20px;">
+    <p style="letter-spacing:2px; font-size:12px; color:#38ada9; margin:0;">
+        WHAT WE WORK ON
+    </p>
+    <h2 style="margin-top:5px;">Boats We Service</h2>
+</div>
 
     <div class="fleet">
         <img src="wakeboat.jpg" alt="Wake boat">
