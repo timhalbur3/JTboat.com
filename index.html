@@ -20,7 +20,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 40px;
+    padding: 15px 20px; /* reduced from 40px */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +28,7 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-sizing: border-box; /* FIXES overflow */
 }
 
 body {
@@ -52,6 +53,17 @@ body {
     color: white;
 }
 
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* prevents cutting off */
+}
+
+.nav a {
+    margin-left: 15px; /* reduced from 25px */
+    font-size: 13px; /* slightly smaller */
+}
+    
 /* Call button in header */
 .call-btn {
     border: 1px solid #38ada9;
@@ -128,7 +140,14 @@ body {
 }
 
 /* FLEET */
-    
+
+.boat-label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
 .fleet {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -278,30 +297,37 @@ body {
 </div>
 
 <!-- FLEET -->
-<div class="fleet">
+<div class="section" id="fleet">
 
-    <div>
-        <p style="margin-bottom:8px; font-size:14px;">Wake Boats</p>
-        <img src="wakeboat.jpg" alt="Wake boat">
+    <p style="letter-spacing:2px; font-size:12px; color:#38ada9; margin:0;">
+        WHAT WE WORK ON
+    </p>
+    <h2 style="margin-top:5px;">Boats We Service</h2>
+
+    <div class="fleet">
+
+        <div>
+            <p class="boat-label">Wake Boats</p>
+            <img src="wakeboat.jpg" alt="Wake boat">
+        </div>
+
+        <div>
+            <p class="boat-label">Fishing Boats</p>
+            <img src="fishingboat.jpg" alt="Fishing boat">
+        </div>
+
+        <div>
+            <p class="boat-label">Pontoons</p>
+            <img src="pontoon.jpg" alt="Pontoon">
+        </div>
+
+        <div>
+            <p class="boat-label">Jet Skis</p>
+            <img src="jetski.jpg" alt="Jet ski">
+        </div>
+
     </div>
-
-    <div>
-        <p style="margin-bottom:8px; font-size:14px;">Fishing Boats</p>
-        <img src="fishingboat.jpg" alt="Fishing boat">
-    </div>
-
-    <div>
-        <p style="margin-bottom:8px; font-size:14px;">Pontoons</p>
-        <img src="pontoon.jpg" alt="Pontoon">
-    </div>
-
-    <div>
-        <p style="margin-bottom:8px; font-size:14px;">Jet Skis</p>
-        <img src="jetski.jpg" alt="Jet ski">
-    </div>
-
 </div>
-
 <!-- BEFORE / AFTER -->
 <div class="section" id="beforeafter">
     <h2>Real Results</h2>
