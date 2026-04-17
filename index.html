@@ -226,49 +226,42 @@ body {
 }
     
 /* BEFORE AFTER SLIDER */
-.slider-container {
-    position: relative;
+.ba-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.ba-column {
+    background: #12263a;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.ba-column img {
     width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.2);
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-.slider-container img {
-    width: 100%;
-    display: block;
+.ba-label {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 5px 0;
 }
 
-.slider-before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    overflow: hidden;
+.ba-label.before {
+    color: #ff7675;
 }
 
-.slider-handle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background: white;
-    cursor: ew-resize;
+.ba-label.after {
+    color: #55efc4;
 }
     
-.slider-handle::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 18px;
-    height: 18px;
-    background: white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
 /* REVIEWS */
 .review {
     background: #12263a;
@@ -404,28 +397,24 @@ body {
     </p>
     <h2 style="margin-top:5px;">Before & After</h2>
 
-    <div class="before-after-grid">
+    <div class="ba-columns">
 
-        <!-- SET 1 -->
-        <div class="ba-card">
-            <p class="ba-label">Before</p>
-            <img src="Boat before.jpg">
+        <!-- COLUMN 1 -->
+        <div class="ba-column">
+            <p class="ba-label before">Before</p>
+            <img src="before.jpg">
+
+            <p class="ba-label after">After</p>
+            <img src="after.jpg">
         </div>
 
-        <div class="ba-card">
-            <p class="ba-label">After</p>
-            <img src="Boat after.jpg">
-        </div>
+        <!-- COLUMN 2 -->
+        <div class="ba-column">
+            <p class="ba-label before">Before</p>
+            <img src="before2.jpg">
 
-        <!-- SET 2 -->
-        <div class="ba-card">
-            <p class="ba-label">Before</p>
-            <img src="boat before2.jpg">
-        </div>
-
-        <div class="ba-card">
-            <p class="ba-label">After</p>
-            <img src=" Boat after2.jpg">
+            <p class="ba-label after">After</p>
+            <img src="after2.jpg">
         </div>
 
     </div>
