@@ -273,6 +273,54 @@ body {
     text-align: left;
 }
 
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    padding: 12px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* TEXT */
+.text-btn {
+    background: #38ada9;
+    color: white;
+}
+
+.text-btn:hover {
+    background: #2f8f8b;
+}
+
+/* FACEBOOK */
+.fb-btn {
+    background: #1877f2;
+    color: white;
+}
+
+.fb-btn:hover {
+    background: #145dc1;
+}
+
+/* EMAIL */
+.email-btn {
+    background: #444;
+    color: white;
+}
+
+.email-btn:hover {
+    background: #222;
+}
+    
 /* FOOTER */
 .footer {
     padding: 30px;
@@ -442,7 +490,30 @@ body {
     <h2>Ready When You Are</h2>
     <a class="btn" href="tel:6054805458">Call JT Boat Services</a>
 </div>
+<div class="section">
 
+    <h2>Contact Us</h2>
+
+    <div class="contact-buttons">
+
+        <!-- TEXT -->
+        <a href="sms:6054805458" class="contact-btn text-btn">
+            📱 Text Us
+        </a>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/YOURPAGE" target="_blank" class="contact-btn fb-btn">
+            👍 Facebook
+        </a>
+
+        <!-- EMAIL -->
+        <a href="mailto:youremail@gmail.com" class="contact-btn email-btn">
+            ✉️ Email Us
+        </a>
+
+    </div>
+
+</div>
 <!-- FOOTER -->
 <div class="footer">
     JT Boat Services • Madison, South Dakota
