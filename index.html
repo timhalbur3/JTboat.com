@@ -329,6 +329,46 @@ body {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+/* STICKY BUTTONS CONTAINER */
+.sticky-buttons {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    z-index: 2000;
+}
+
+/* BUTTON STYLE */
+.sticky-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
+
+/* CALL */
+.sticky-btn.call {
+    background: #38ada9;
+}
+
+/* TEXT */
+.sticky-btn.text {
+    background: #2ecc71;
+}
+
+/* HOVER EFFECT */
+.sticky-btn:hover {
+    transform: scale(1.1);
+}
+    
 /* STICKY CALL */
 .sticky-call {
     position: fixed;
@@ -365,7 +405,6 @@ body {
 <div class="hero">
     <h1>Premium Dockside Boat Care</h1>
     <p>Interior Cleaning • Dockside Service • On-Lift Refueling</p>
-    <a class="btn" href="tel:6054805458">Call Now</a>
 </div>
 
 <!-- SERVICES -->
@@ -512,11 +551,6 @@ body {
     JT Boat Services • Madison, South Dakota
 </div>
 
-<!-- STICKY BUTTON -->
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-    <a class="btn" href="tel:6054805458">📞 Call Now</a>
-</div>
-
 <!-- SLIDER SCRIPT -->
 <script>
 const slider = document.getElementById("slider");
@@ -551,5 +585,11 @@ slider.addEventListener("touchmove", e => {
 });
 </script>
 
+<!-- STICKY CALL + TEXT -->
+<div class="sticky-buttons">
+    <a href="tel:6054805458" class="sticky-btn call">📞</a>
+    <a href="sms:6054805458" class="sticky-btn text">💬</a>
+</div>
+    
 </body>
 </html>
