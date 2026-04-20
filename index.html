@@ -32,13 +32,12 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    padding: 14px 22px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(6, 26, 43, 0.75);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     box-sizing: border-box;
@@ -47,6 +46,18 @@ body {
 .header img {
     height: 42px;
     border-radius: 6px;
+}
+
+.logo-box {
+    background: white;
+    padding: 6px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-box img {
+    height: 38px;
 }
     
 .nav {
@@ -363,6 +374,18 @@ body {
 .sticky-btn:hover {
     transform: scale(1.1);
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}    
+    
 </style>
 </head>
 
@@ -378,6 +401,10 @@ body {
     </div>
 </div>
 
+<div class="logo-box">
+    <img src="jtlogo.jpg" alt="JT Boat Services Logo">
+</div>
+    
 <!-- HERO -->
 <div class="hero">
     <div class="hero-overlay"></div>
@@ -399,18 +426,18 @@ body {
 </div>
 
 <!-- SERVICES -->
-<div class="section" id="services">
+<div class="section reveal" id="services">
     <h2>What We Do</h2>
     <div class="grid">
-        <div class="card">
+        <div class="card reveal">
             <h3>Interior Cleaning</h3>
             <p>Deep cleaning of seats, floors, and cabins.</p>
         </div>
-        <div class="card">
+        <div class="card reveal">
             <h3>Dockside Service</h3>
             <p>We clean your boat directly at your dock or lift.</p>
         </div>
-        <div class="card">
+        <div class="card reveal">
             <h3>On-Lift Refueling</h3>
             <p>Fuel delivered directly to your boat.</p>
         </div>
@@ -418,7 +445,7 @@ body {
 </div>
 
 <!-- AREAS -->
-<div class="section">
+<div class="section reveal">
     <div class="split">
         <div>
             <h2>Boat Cleaning in Madison, SD</h2>
@@ -435,51 +462,51 @@ body {
 </div>
 
 <!-- FLEET (FIXED WITH LABELS) -->
-<div class="section" id="fleet">
+<div class="section reveal" id="fleet">
     <h2>Boats We Service</h2>
 
     <div class="fleet">
 
         <div class="boat-block">
             <div class="boat-label">Pontoons</div>
-            <img src="pontoon.jpg">
+            <img class="reveal" src="pontoon.jpg">
         </div>
 
         <div class="boat-block">
             <div class="boat-label">Wake Boats</div>
-            <img src="wakeboat.jpg">
+            <img class="reveal" src="wakeboat.jpg">
         </div>
 
         <div class="boat-block">
             <div class="boat-label">Fishing Boats</div>
-            <img src="fishingboat.jpg">
+            <img class="reveal" src="fishingboat.jpg">
         </div>
 
         <div class="boat-block">
             <div class="boat-label">Jet Skis</div>
-            <img src="jetski.jpg">
+            <img class="reveal" src="jetski.jpg">
         </div>
 
     </div>
 </div>
 
 <!-- BEFORE AFTER -->
-<div class="section" id="beforeafter">
+<div class="section reveal" id="beforeafter">
     <h2>Before & After</h2>
     <div class="ba-columns">
         <div class="ba-column">
-            <img src="Boat before.jpg">
-            <img src="Boat after.jpg">
+            <img class="reveal" src="Boat before.jpg">
+            <img class="reveal" src="Boat after.jpg">
         </div>
         <div class="ba-column">
-            <img src="boat before2.jpg">
-            <img src="Boat after2.jpg">
+            <img class="reveal" src="boat before2.jpg">
+            <img class="reveal" src="Boat after2.jpg">
         </div>
     </div>
 </div>
 
 <!-- CONTACT -->
-<div class="section">
+<div class="section reveal">
     <h2>Contact Us</h2>
     <div class="contact-buttons">
         <a href="sms:6054805458" class="contact-btn text-btn">Text</a>
@@ -499,5 +526,24 @@ body {
     <a href="sms:6054805458" class="sticky-btn text">💬</a>
 </div>
 
+<script>
+const elements = document.querySelectorAll('.section, .card, .fleet img, .ba-column, .area-card');
+
+function revealOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+    
 </body>
 </html>
