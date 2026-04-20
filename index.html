@@ -42,12 +42,8 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.08);
     box-sizing: border-box;
 }
-    
-.header img {
-    height: 42px;
-    border-radius: 6px;
-}
 
+/* white logo box like luxury sites */
 .logo-box {
     background: white;
     padding: 6px 12px;
@@ -58,30 +54,34 @@ body {
 
 .logo-box img {
     height: 38px;
+    display: block;
 }
-    
+
+/* nav */
 .nav {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .nav a {
     color: rgba(255,255,255,0.75);
-    margin-left: 18px;
     text-decoration: none;
     font-size: 14px;
     padding: 8px 12px;
     border-radius: 8px;
     transition: all 0.25s ease;
-    position: relative;
 }
 
 .nav a:hover {
     color: white;
     background: linear-gradient(135deg, #1e88e5, #0f4c75);
-    box-shadow: 0 8px 20px rgba(30,136,229,0.25);
     transform: translateY(-2px);
+}
+    
+.header img {
+    height: 42px;
+    border-radius: 6px;
 }
 
 .nav a.active {
@@ -393,18 +393,19 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-    <img src="jtlogo.jpg" style="height:45px;">
+
+    <div class="logo-box">
+        <img src="jtlogo.jpg" alt="JT Boat Services Logo">
+    </div>
+
     <div class="nav">
         <a href="#services">Services</a>
         <a href="#fleet">Fleet</a>
         <a href="#beforeafter">Results</a>
     </div>
+
 </div>
 
-<div class="logo-box">
-    <img src="jtlogo.jpg" alt="JT Boat Services Logo">
-</div>
-    
 <!-- HERO -->
 <div class="hero">
     <div class="hero-overlay"></div>
