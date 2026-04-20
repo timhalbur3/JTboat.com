@@ -84,17 +84,95 @@ body {
 
 /* HERO */
 .hero {
-    height: 65vh;
+    height: 90vh;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
+        linear-gradient(135deg, #061a2b, #0b2f4a, #0f4c75),
+        url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+}
+
+/* dark overlay like luxury sites */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+/* content container */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* small top label */
+.hero-subtitle {
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+}
+
+/* main title */
+.hero h1 {
+    font-size: 52px;
+    margin: 0;
+    color: white;
+}
+
+/* description */
+.hero-text {
+    margin-top: 15px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+}
+
+/* buttons */
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+/* primary button (blue gradient like theirs) */
+.hero-btn.primary {
+    background: linear-gradient(135deg, #1e88e5, #0f4c75);
+    color: white;
+    box-shadow: 0 10px 20px rgba(30,136,229,0.25);
+}
+
+/* secondary button */
+.hero-btn.secondary {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+.hero-btn.secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* hover effects */
+.hero-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(30,136,229,0.35);
 }
 
 /* SECTIONS */
@@ -302,8 +380,22 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Premium Dockside Boat Care</h1>
-    <p>Interior Cleaning • Dockside Service • On-Lift Refueling</p>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <p class="hero-subtitle">MADISON, SOUTH DAKOTA</p>
+
+        <h1>Premium Dockside Boat Care</h1>
+
+        <p class="hero-text">
+            Interior Cleaning • Dockside Service • On-Lift Refueling
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#services" class="hero-btn primary">Our Services</a>
+            <a href="sms:6054805458" class="hero-btn secondary">Text Us</a>
+        </div>
+    </div>
 </div>
 
 <!-- SERVICES -->
