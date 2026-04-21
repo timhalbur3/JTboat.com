@@ -453,77 +453,6 @@ body {
     transform: translateY(0);
 }    
 
-/* ===== CLEAN CONTACT DOCK ===== */
-.contact-dock {
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 18px;
-
-    background: rgba(6, 26, 43, 0.65);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.08);
-
-    z-index: 2000;
-}
-
-/* BUTTON */
-.dock-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-
-    text-decoration: none;
-    color: white;
-
-    transition: all 0.25s ease;
-}
-
-/* ICON */
-.dock-btn span {
-    font-size: 18px;
-}
-
-/* LABEL */
-.dock-btn p {
-    font-size: 10px;
-    margin: 2px 0 0 0;
-    opacity: 0.7;
-}
-
-/* HOVER EFFECT */
-.dock-btn:hover {
-    transform: translateY(-4px);
-    background: rgba(30,136,229,0.25);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* COLOR ACCENTS */
-.dock-btn.call:hover {
-    background: rgba(56, 173, 169, 0.25);
-}
-
-.dock-btn.text:hover {
-    background: rgba(46, 204, 113, 0.25);
-}
-
-.dock-btn.email:hover {
-    background: rgba(30,136,229,0.25);
-}
-
-/* FACEBOOK HOVER COLOR */
-.dock-btn.facebook:hover {
-    background: rgba(24, 119, 242, 0.25);
-}    
-    
 </style>
 </head>
 
@@ -758,27 +687,50 @@ body {
 </div>
     
 <!-- CONTACT -->
-<div class="contact-dock" id="contact">
-    <a href="tel:6054805458" class="dock-btn call">
-        <span>📞</span>
-        <p>Call</p>
-    </a>
+<!-- CONTACT SECTION -->
+<div class="section reveal" id="contact">
 
-    <a href="sms:6054805458" class="dock-btn text">
-        <span>💬</span>
-        <p>Text</p>
-    </a>
+    <p style="letter-spacing:2px; font-size:12px; color:#4fc3f7; margin:0; text-align:center;">
+        CONTACT
+    </p>
 
-    <a href="mailto:sdjtboatservices@gmail.com" class="dock-btn email">
-        <span>✉️</span>
-        <p>Email</p>
-    </a>
+    <h2>Get In Touch</h2>
 
-    <!-- NEW FACEBOOK -->
-    <a href="https://www.facebook.com/groups/912642447889909/" target="_blank" class="dock-btn facebook">
-        <span>👍</span>
-        <p>Facebook</p>
-    </a>
+    <p style="max-width:700px; margin: 10px auto 30px auto; text-align:center; color: rgba(255,255,255,0.75);">
+        Message us directly for scheduling, pricing, or questions. We respond fast and handle all bookings personally.
+    </p>
+
+    <div class="grid">
+
+        <!-- CALL -->
+        <div class="card reveal" style="text-align:center;">
+            <h3>📞 Call</h3>
+            <p>605-480-5458</p>
+            <a href="tel:6054805458" class="hero-btn primary">Call Now</a>
+        </div>
+
+        <!-- TEXT -->
+        <div class="card reveal" style="text-align:center;">
+            <h3>💬 Text</h3>
+            <p>Fastest way to reach us</p>
+            <a href="sms:6054805458" class="hero-btn primary">Send Text</a>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="card reveal" style="text-align:center;">
+            <h3>✉️ Email</h3>
+            <p>sdjtboatservices@gmail.com</p>
+            <a href="mailto:sdjtboatservices@gmail.com" class="hero-btn primary">Send Email</a>
+        </div>
+
+        <!-- FACEBOOK -->
+        <div class="card reveal" style="text-align:center;">
+            <h3>👍 Facebook</h3>
+            <p>Message us on Facebook</p>
+            <a href="https://www.facebook.com/groups/912642447889909/" target="_blank" class="hero-btn primary">Open Facebook</a>
+        </div>
+
+    </div>
 
 </div>
 <!-- FOOTER -->
