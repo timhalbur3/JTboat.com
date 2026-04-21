@@ -452,6 +452,77 @@ body {
     opacity: 1;
     transform: translateY(0);
 }    
+
+/* ===== CLEAN CONTACT DOCK ===== */
+.contact-dock {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 18px;
+
+    background: rgba(6, 26, 43, 0.65);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    z-index: 2000;
+}
+
+/* BUTTON */
+.dock-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+
+    text-decoration: none;
+    color: white;
+
+    transition: all 0.25s ease;
+}
+
+/* ICON */
+.dock-btn span {
+    font-size: 18px;
+}
+
+/* LABEL */
+.dock-btn p {
+    font-size: 10px;
+    margin: 2px 0 0 0;
+    opacity: 0.7;
+}
+
+/* HOVER EFFECT */
+.dock-btn:hover {
+    transform: translateY(-4px);
+    background: rgba(30,136,229,0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* COLOR ACCENTS */
+.dock-btn.call:hover {
+    background: rgba(56, 173, 169, 0.25);
+}
+
+.dock-btn.text:hover {
+    background: rgba(46, 204, 113, 0.25);
+}
+
+.dock-btn.email:hover {
+    background: rgba(30,136,229,0.25);
+}
+
+/* FACEBOOK HOVER COLOR */
+.dock-btn.facebook:hover {
+    background: rgba(24, 119, 242, 0.25);
+}    
     
 </style>
 </head>
@@ -470,7 +541,7 @@ body {
         <a href="#services">Services</a>
         <a href="#fleet">Fleet</a>
         <a href="#beforeafter">Results</a>
-        <a href="#contact" class="nav-contact">Contact</a>
+        <a href="#contact">Contact</a>
     </div>
 
 </div>
@@ -687,15 +758,29 @@ body {
 </div>
     
 <!-- CONTACT -->
-<div class="section reveal">
-    <h2>Contact Us</h2>
-    <div class="contact-buttons">
-        <a href="sms:6054805458" class="contact-btn text-btn">Text</a>
-        <a href="https://www.facebook.com/groups/912642447889909/" target="_blank" class="contact-btn fb-btn">Facebook</a>
-        <a href="mailto:sdjtboatservices@gmail.com" class="contact-btn email-btn">Email</a>
-    </div>
-</div>
+<div class="contact-dock" id="contact">
+    <a href="tel:6054805458" class="dock-btn call">
+        <span>📞</span>
+        <p>Call</p>
+    </a>
 
+    <a href="sms:6054805458" class="dock-btn text">
+        <span>💬</span>
+        <p>Text</p>
+    </a>
+
+    <a href="mailto:sdjtboatservices@gmail.com" class="dock-btn email">
+        <span>✉️</span>
+        <p>Email</p>
+    </a>
+
+    <!-- NEW FACEBOOK -->
+    <a href="https://www.facebook.com/groups/912642447889909/" target="_blank" class="dock-btn facebook">
+        <span>👍</span>
+        <p>Facebook</p>
+    </a>
+
+</div>
 <!-- FOOTER -->
 <div class="footer">
     JT Boat Services • Madison, South Dakota
