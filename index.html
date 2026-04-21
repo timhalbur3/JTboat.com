@@ -499,23 +499,34 @@ body {
 
 @media (max-width: 768px) {
 
+@media (max-width: 768px) {
+
     .team-layout {
-        grid-template-columns: 1fr 1fr; /* LEFT / RIGHT layout */
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "tim jovi"
+            "center center";
         gap: 15px;
         align-items: start;
     }
 
+    /* assign each section */
+    .team-left {
+        grid-area: jovi; /* LEFT side */
+    }
+
+    .team-right {
+        grid-area: tim; /* RIGHT side */
+    }
+
     .team-center {
-        display: none; /* hide middle vertical image on mobile (optional clean look) */
+        grid-area: center;
+        margin-top: 10px;
     }
 
     .team-card img {
         width: 100px;
         height: 100px;
-    }
-
-    .team-card {
-        text-align: center;
     }
 }
     
