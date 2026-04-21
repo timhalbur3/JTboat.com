@@ -496,6 +496,28 @@ body {
         height: 110px;
     }
 }
+
+@media (max-width: 768px) {
+
+    .team-layout {
+        grid-template-columns: 1fr 1fr; /* LEFT / RIGHT layout */
+        gap: 15px;
+        align-items: start;
+    }
+
+    .team-center {
+        display: none; /* hide middle vertical image on mobile (optional clean look) */
+    }
+
+    .team-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-card {
+        text-align: center;
+    }
+}
     
 </style>
 </head>
