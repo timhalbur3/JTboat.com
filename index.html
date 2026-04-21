@@ -499,29 +499,24 @@ body {
 
 @media (max-width: 768px) {
 
-@media (max-width: 768px) {
-
     .team-layout {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            "tim jovi"
+            "left right"
             "center center";
         gap: 15px;
-        align-items: start;
     }
 
-    /* assign each section */
     .team-left {
-        grid-area: jovi; /* LEFT side */
+        grid-area: left;
     }
 
     .team-right {
-        grid-area: tim; /* RIGHT side */
+        grid-area: right;
     }
 
     .team-center {
         grid-area: center;
-        margin-top: 10px;
     }
 
     .team-card img {
@@ -737,7 +732,7 @@ body {
     <div class="team-layout">
 
         <!-- TIM (LEFT) -->
-        <div class="team-card reveal">
+        <div class="team-card reveal team-left">
             <h3>Tim</h3>
             <p class="role">Co-Owner</p>
             <p class="desc">
@@ -751,7 +746,7 @@ body {
         </div>
 
         <!-- JOVI (RIGHT) -->
-        <div class="team-card reveal">
+        <div class="team-card reveal team-right">
             <h3>Jovi</h3>
             <p class="role">Co-Owner</p>
             <p class="desc">
