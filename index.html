@@ -302,21 +302,33 @@ body {
 /* BEFORE AFTER */
 .ba-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-top: 30px;
 }
 
 .ba-column {
-    background: #12263a;
-    padding: 12px;
-    border-radius: 10px;
+    text-align: center;
+}
+
+.ba-label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #38ada9;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .ba-column img {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.ba-column img:hover {
+    transform: scale(1.05);
 }
 
 /* CONTACT */
@@ -660,11 +672,17 @@ body {
     <h2>Before & After</h2>
     <div class="ba-columns">
         <div class="ba-column">
+            <div class="ba-label">Before</div>
             <img class="reveal" src="Boat before.jpg">
+        
+            <div class="ba-label">After</div>
             <img class="reveal" src="Boat after.jpg">
         </div>
         <div class="ba-column">
+            <div class="ba-label">Before</div>
             <img class="reveal" src="boat before2.jpg">
+        
+            <div class="ba-label">After</div>
             <img class="reveal" src="Boat after2.jpg">
         </div>
     </div>
@@ -704,6 +722,9 @@ body {
 
             <a href="sms:6054805458" class="hero-btn primary" style="margin-top:15px; display:inline-block;">
                 Get Mobile Service
+            </a>
+            <a href="#team" class="hero-btn secondary" style="margin-top:10px; display:inline-block;">
+                Meet the Team
             </a>
         </div>
 
