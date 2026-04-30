@@ -321,10 +321,9 @@ body {
 
 .ba-column img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    aspect-ratio: 4 / 3;   /* keeps everything uniform */
+    object-fit: cover;     /* fills nicely without stretching */
     border-radius: 10px;
-    transition: 0.3s;
 }
 
 .ba-column img:hover {
