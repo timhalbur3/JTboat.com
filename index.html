@@ -218,6 +218,20 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.area-image {
+    width: 100%;
+    max-height: 320px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.area-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    
 /* CARDS */
 .card {
     background: rgba(255,255,255,0.06);
@@ -592,11 +606,17 @@ body {
 <!-- AREAS -->
 <div class="section reveal">
     <div class="split">
+        <!-- TEXT -->
         <div>
-            <h2>Service in Madison, SD area</h2>
-            <p>JT Boat Services provides premium dockside boat cleaning in the Madison area.</p>
+            <h2>Service in Madison, SD Area</h2>
+            <p>
+                JT Boat Services provides premium dockside boat cleaning throughout the Madison area,
+                bringing full-service detailing directly to your dock, lift, or shoreline.
+            </p>
         </div>
-            <img class="reveal" src="servicearea.jpg">
+        <!-- IMAGE BOX -->
+        <div class="area-image">
+            <img class="reveal" src="servicearea.jpg" alt="Service Area Map">
         </div>
     </div>
 </div>
@@ -631,26 +651,36 @@ body {
 </div>
 
 <!-- BEFORE AFTER -->
-<div class="fleet">
+<div class="section reveal" id="beforeafter">
 
-    <div class="boat-block">
-        <div class="boat-label">Before</div>
-        <img class="reveal" src="Boat before.jpg">
-    </div>
+    <h2>Before & After</h2>
 
-    <div class="boat-block">
-        <div class="boat-label">After</div>
-        <img class="reveal" src="Boat after.jpg">
-    </div>
+    <p style="max-width:700px; margin: 10px auto 30px auto; text-align:center; color: rgba(255,255,255,0.75);">
+        Real results from our mobile detailing services — restoring boats to clean, like-new condition.
+    </p>
 
-    <div class="boat-block">
-        <div class="boat-label">Before</div>
-        <img class="reveal" src="boat before2.jpg">
-    </div>
+    <div class="fleet">
 
-    <div class="boat-block">
-        <div class="boat-label">After</div>
-        <img class="reveal" src="Boat after2.jpg">
+        <div class="boat-block">
+            <div class="boat-label">Before</div>
+            <img class="reveal" src="Boat before.jpg">
+        </div>
+
+        <div class="boat-block">
+            <div class="boat-label">After</div>
+            <img class="reveal" src="Boat after.jpg">
+        </div>
+
+        <div class="boat-block">
+            <div class="boat-label">Before</div>
+            <img class="reveal" src="boat before2.jpg">
+        </div>
+
+        <div class="boat-block">
+            <div class="boat-label">After</div>
+            <img class="reveal" src="Boat after2.jpg">
+        </div>
+
     </div>
 
 </div>
