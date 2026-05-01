@@ -258,8 +258,10 @@ body {
 
 /* 1/4 text, 3/4 image */
 .area-split {
+    display: grid;              /* 🔥 THIS IS WHAT YOU WERE MISSING */
     grid-template-columns: 1fr 3fr;
     align-items: center;
+    gap: 40px;
 }
     
 /* GRID */
@@ -275,6 +277,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+}
+
+.area-text h2 {
+    text-align: left;
 }
 
 @media (max-width: 768px) {
