@@ -253,6 +253,12 @@ body {
     background: rgba(30,136,229,0.15);
 }
 
+/* 1/4 text, 3/4 image */
+.area-split {
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+    
 /* GRID */
 .grid {
     display: grid;
@@ -613,18 +619,17 @@ body {
 <!-- AREAS -->
 <div class="section reveal">
     <div class="split area-split">
-        <!-- TEXT -->
+
         <div>
-            <h2>Service in Madison, SD Area</h2>
-            <p>
-                JT Boat Services provides premium dockside boat cleaning throughout the Madison area,
-                bringing full-service detailing directly to your dock, lift, or shoreline.
-            </p>
+            <h2>Boat Cleaning in Madison, SD</h2>
+            <p>JT Boat Services provides premium dockside boat cleaning in the Madison area.</p>
         </div>
-        <!-- BIGGER IMAGE -->
-        <div class="area-image">
-            <img class="reveal" src="servicearea.jpg" alt="Service Area Map">
+
+        <div>
+            <img class="reveal" src="servicearea.jpg" 
+                 style="width:100%; border-radius:14px; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
         </div>
+
     </div>
 </div>
 
